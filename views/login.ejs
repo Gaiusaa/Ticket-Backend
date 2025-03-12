@@ -1,14 +1,17 @@
 <%-include("partials/head")%>
 <%-include("partials/nav")%>
-<div class = "content-div">
-    <h1>Logg inn</h1>
+<div class = "content-div flex-column">
 
-    <form class = "login-form flex-column">
-        <label name = "email">Din E-post</label>
-        <input type = "email" name = "email" id = "email" placeholder = "eksempel@storebrand.no">
+    <form class = "login-form flex-column round shadow outline">
+        <label name = "email">Logg inn</label>
         <br>
-        <label name = "password">Ditt passord</label>
-        <input type = "password" name = "password" id = "password">
+        <input type = "email" name = "email" id = "email" placeholder = "e-post">
+        <input type = "password" name = "password" id = "password" placeholder = "passord">
+        <br>
+        <label name = "token-check" class = "token-check">Husk meg</label>
+        <input type = "checkbox" id = "token-check">
+        <a href = "/forgot-password">Glemt passord?</a>
+        <br>
         <button type = "submit" class = "button">SEND</button>
     </form>
 </div>

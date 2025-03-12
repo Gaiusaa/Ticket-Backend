@@ -1,0 +1,27 @@
+<%-include("partials/head")%>
+<%-include("partials/nav")%>
+<div class = "content-div flex-column">
+    <div class = "ticket-div outline round">
+        <h1 class = "title">TICKETS</h1>
+        <div class = "tickets scroll">
+            <%tickets.forEach((ticket) => {%>
+                <div class = "ticket shadow round flex-column">
+                    <a class = "title round" href = <%=`/tickets/${ticket.id}` || "/tickets"%>><%=ticket.id || "n/a"%></a>
+                    <div class = "ticket-selection flex-row">
+                        <div class = "ticket-keys flex-column">
+                            <h2 class = "ticket-index sub-title">Epost</h2>
+                            <h2 class = "ticket-index sub-title">Prioritet</h2>
+                            <h2 class = "ticket-index sub-title">On-site</h2>
+                        </div>
+                        <div class = "ticket-values flex-column">
+                            <p class = "ticket-index read"><%=ticket.email%></h2>
+                            <p class = "ticket-index read"><%=ticket.priority%></h2>
+                            <p class = "ticket-index read"><%=ticket.onSite%></h2>
+                        </div>
+                    </div>
+                </div>
+            <%})%>
+        </div>
+    </div>
+</div>
+<%-include("partials/foot")%>

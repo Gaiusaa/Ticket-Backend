@@ -1,5 +1,21 @@
 <%-include("partials/head")%>
 <%-include("partials/nav")%>
-<h1>Home page</h1>
+<div class = "content-div flex-column">
+    <div class = "dashboard flex-column outline round">
+        <h1 class = "title" id = "home-title">Velkommen, <%=data.user.name%></h1>
+        <div class = "dashboard-page flex-row">
+            <div class = "dasboard-page-content round flex-column shadow">
+                <h1 class = "sub-title">DASHBOARD</h1>
+                <p class = "read">Se startsiden for generell info</p>
+                <button class = "button round title" id = "/" action = "GET">GÅ</button>
+            </div>
+            <div class = "dasboard-page-content round flex-column shadow">
+                <h1 class = "sub-title">TICKETS</h1>
+                <p class = "read">Se pågående og nye saker</p>
+                <button class = "button round title" id = "tickets" action = "GET">GÅ</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <%-include("partials/foot")%>

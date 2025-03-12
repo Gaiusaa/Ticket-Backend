@@ -7,8 +7,8 @@ const checkToken = (token) => { // Validates login token
 
     jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
         if (err) return false;
-        return true;
     });
+    return true;
 };
 
 // Route Functions
@@ -25,8 +25,8 @@ const noTokenCheck = (req, res, next) => { // Ensures already logged in users ca
 }
 
 const loginCheck = (req, res, next) => {
-    const {email, password} = req.body;
-    if (!email || !password) return res.status(401).send("An error occurred while performing this action");
+    const {email, password, remember} = req.body;
+    if (!email || !password || !remember) return res.status(401).send("An error occurred while performing this action");
     next();
 };
 
